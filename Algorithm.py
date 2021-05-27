@@ -1,16 +1,10 @@
-from Gene import *
-
-class Algorithm:
-    def __init__(self):
-        gen1 = Gene()
-        
-        print(f"gen1 = {gen1.toString()}")
-        msg = "cero" if gen1.isZero() else "uno"
-        print(f"Bit de gen1 es {msg}")
-
-        gen2 = Gene()
-        gen2.setBit(gen1.getBit())
-        print(f"gen2 = {gen1.toString()}")
+from Cromosome import *
 
 if __name__ == "__main__":
-    Algorithm()
+    clave = Cromosome()
+
+    print(clave.toString())
+    b = 1 if clave.getBitAtGen(1) == 0 else 0
+    clave.setBitAtGen(1, b)
+    print(f"Cromosoma Gen1 = {clave.getBitAtGen(1)}")
+    print(clave.toString())
